@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.route';
 import initDatabase from './config/db';
 import cors from 'cors';
+import poolRoutes from './routes/pool.route';
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use(cors({
 
 // Routes
 app.use('/auth', authRoutes);
+app.use('/api', poolRoutes);
 
 // Start Server
 app.listen(PORT, () => {
